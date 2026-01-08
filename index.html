@@ -59,8 +59,9 @@
     console.log(`Row ${i}:`, row['Seat Number'], typeof row['Seat Number']);
 });
             const studentExams = examData.filter(row =>{
-              const seatNum = row['Seat Number']?.toString().trim().toLowerCase();
-              return seatNum === seat ;   
+              const seatNum = String(row['Seat Number'] ?? '').trim().toLowerCase();
+               const searchSeat = String(seat ?? '').trim().toLowerCase();
+                return seatNum === searchSeat;
             });
 
             if (studentExams.length === 0) {
@@ -92,6 +93,7 @@
     </script>
 </body>
 </html>
+
 
 
 
