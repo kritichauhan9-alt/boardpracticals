@@ -55,6 +55,9 @@
             const seat = document.getElementById('seatNumber').value.trim().toLowerCase();
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(seat);
+            examData.forEach((row, i) => {
+    console.log(`Row ${i}:`, row['Seat Number'], typeof row['Seat Number']);
+});
             const studentExams = examData.filter(row =>{
               const seatNum = row['Seat Number']?.toString().trim().toLowerCase();
               return seatNum === seat ;   
@@ -89,6 +92,7 @@
     </script>
 </body>
 </html>
+
 
 
 
