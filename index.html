@@ -57,7 +57,7 @@
             const stream = document.getElementById('stream').value.toLowerCase();
           alert(examData.length);
             const studentExams = examData.filter(row => 
-                row['Seat Number'] == seat && row['Stream'].toLowerCase() === stream
+                row['Seat Number'] == seat.toString() && row['Stream'].toLowerCase() === stream
             );
          
 
@@ -90,6 +90,7 @@
     </script>
 </body>
 </html>
+
 
 
 
