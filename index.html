@@ -42,6 +42,7 @@
                 const workbook = XLSX.read(data, { type: 'array' });
                 const sheet = workbook.Sheets[workbook.SheetNames[0]];
                 examData = XLSX.utils.sheet_to_json(sheet);
+                console.log('Excel loaded:', examData);
                 console.log('Excel loaded:', examData.length, 'records');
             } catch (error) {
                 alert('Error loading Excel file. Check URL.');
@@ -55,9 +56,11 @@
             const seat = document.getElementById('seatNumber').value.trim();
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(examData);
-            const studentExams = examData.filter(row => 
-                row['Seat Number'] === seat && row['Stream'].toString().trim() === stream
-            );
+            const studentExams = examData.filter(row => {
+                const rowSeat = String(row['Seat Number']).trim();
+                const rowStream = String(row['Stream']).trim().toLowerCase();
+                return rowSeat === seat && rowStream === stream;
+            });
 
             alert(studentExams.length);
             if (studentExams.length === 0) {
@@ -89,6 +92,7 @@
     </script>
 </body>
 </html>
+
 
 
 
