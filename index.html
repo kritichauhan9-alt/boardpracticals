@@ -58,9 +58,9 @@
             examData.forEach((row, i) => {
     console.log(`Row ${i}:`, row['A'], typeof row['A']);
 });
-            const studentExams = examData.filter(row =>{
+            const studentExams = examData.filter(row =>
               row['A']?.trim().toLowerCase() === seat && row['B']?.trim().toLowerCase() === stream
-);
+            );
 
             if (studentExams.length === 0) {
                 alert('No data found for this seat number and stream.');
@@ -91,6 +91,7 @@
     </script>
 </body>
 </html>
+
 
 
 
