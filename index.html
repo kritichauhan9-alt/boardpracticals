@@ -66,8 +66,8 @@
             }
 
             const studentName = studentExams[0]['C'];
-            const batch = studentExams[0]['D'];
-            document.getElementById('studentInfo').textContent = `Student: ${studentName} (Batch: ${batch})`;
+            //const batch = studentExams[0]['D'];
+            document.getElementById('studentInfo').textContent = `Student: ${studentName} (Stream: ${stream})`;
 
             const tbody = document.querySelector('#examTable tbody');
             tbody.innerHTML = '';
@@ -90,6 +90,7 @@
     </script>
 </body>
 </html>
+
 
 
 
