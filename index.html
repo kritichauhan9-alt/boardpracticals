@@ -56,7 +56,7 @@
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(seat);
             examData.forEach((row, i) => {
-    console.log(`Row ${i}:`, row[0], typeof row[0]);
+    console.log(`Row ${i}:`, row['A'], typeof row['A']);
 });
             const studentExams = examData.filter(row =>{
               const seatNum = String(row['Seat Number'] ?? '').trim().toLowerCase();
@@ -93,6 +93,7 @@
     </script>
 </body>
 </html>
+
 
 
 
