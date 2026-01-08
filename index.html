@@ -55,9 +55,7 @@
             const seat = document.getElementById('seatNumber').value.trim().toLowerCase();
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(seat);
-            examData.forEach((row, i) => {
-    console.log(`Row ${i}:`, row['A'], typeof row['A']);
-});
+        
             const studentExams = examData.filter(row =>
               row['A']?.trim().toLowerCase() === seat && row['B']?.trim().toLowerCase() === stream
             );
@@ -67,8 +65,8 @@
                 return;
             }
 
-            const studentName = studentExams[0]['Student Name'];
-            const batch = studentExams[0]['Batch Number'];
+            const studentName = studentExams[0]['C'];
+            const batch = studentExams[0]['D'];
             document.getElementById('studentInfo').textContent = `Student: ${studentName} (Batch: ${batch})`;
 
             const tbody = document.querySelector('#examTable tbody');
@@ -76,10 +74,10 @@
             studentExams.forEach(exam => {
                 const row = tbody.insertRow();
                 row.innerHTML = `
-                    <td>${exam.Subject}</td>
-                    <td>${exam.Date}</td>
-                    <td>${exam.Time}</td>
-                    <td>${exam.Venue}</td>
+                    <td>${exam.E}</td>
+                    <td>${exam.F}</td>
+                    <td>${exam.G}</td>
+                    <td>${exam.H}</td>
                 `;
             });
 
@@ -91,6 +89,7 @@
     </script>
 </body>
 </html>
+
 
 
 
