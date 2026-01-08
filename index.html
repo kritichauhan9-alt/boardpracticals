@@ -41,7 +41,6 @@
                 const data = await response.arrayBuffer();
                 const workbook = XLSX.read(data, { type: 'array' });
                 const sheet = workbook.Sheets[workbook.SheetNames[0]];
-                alert(sheet);
                 examData = XLSX.utils.sheet_to_json(sheet);
                 console.log('Excel loaded:', examData.length, 'records');
             } catch (error) {
@@ -55,7 +54,6 @@
           
             const seat = document.getElementById('seatNumber').value;
             const stream = document.getElementById('stream').value.toLowerCase();
-          alert(examData.length);
             const studentExams = examData.filter(row => 
                 row['Seat Number'] == seat.toString() && row['Stream'].toLowerCase() === stream
             );
@@ -90,6 +88,7 @@
     </script>
 </body>
 </html>
+
 
 
 
