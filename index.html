@@ -41,6 +41,7 @@
                 const data = await response.arrayBuffer();
                 const workbook = XLSX.read(data, { type: 'array' });
                 const sheet = workbook.Sheets[workbook.SheetNames[0]];
+                alert(sheet);
                 examData = XLSX.utils.sheet_to_json(sheet);
                 console.log('Excel loaded:', examData.length, 'records');
             } catch (error) {
@@ -89,6 +90,7 @@
     </script>
 </body>
 </html>
+
 
 
 
