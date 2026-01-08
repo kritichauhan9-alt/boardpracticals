@@ -51,6 +51,7 @@
         // Search on form submit
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            alert(examData.length);
             const seat = document.getElementById('seatNumber').value;
             const stream = document.getElementById('stream').value.toLowerCase();
 
@@ -87,5 +88,6 @@
     </script>
 </body>
 </html>
+
 
 
