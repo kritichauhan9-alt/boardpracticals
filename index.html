@@ -42,7 +42,6 @@
                 const workbook = XLSX.read(data, { type: 'array' });
                 const sheet = workbook.Sheets[workbook.SheetNames[0]];
                 examData = XLSX.utils.sheet_to_json(sheet);
-                console.log('Excel loaded:', examData);
                 console.log('Excel loaded:', examData.length, 'records');
             } catch (error) {
                 alert('Error loading Excel file. Check URL.');
@@ -62,7 +61,6 @@
                 return rowSeat === seat && rowStream === stream;
             });
 
-            alert(studentExams[0]);
             if (studentExams.length === 0) {
                 alert('No data found for this seat number and stream.');
                 return;
@@ -92,6 +90,7 @@
     </script>
 </body>
 </html>
+
 
 
 
