@@ -55,11 +55,9 @@
             const seat = document.getElementById('seatNumber').value.trim().toLowerCase();
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(seat);
-            const studentExams = examData.filter(row => {
-                const rowSeat = String(row['Seat Number']).trim().toLowerCase();
-                const rowStream = String(row['Stream']).trim().toLowerCase();
-                return rowSeat === seat && rowStream === stream;
-            });
+            const studentExams = examData.filter(row =>
+                row['Seat Number']?.toString() === seat
+            );
 
             if (studentExams.length === 0) {
                 alert('No data found for this seat number and stream.');
@@ -90,6 +88,7 @@
     </script>
 </body>
 </html>
+
 
 
 
