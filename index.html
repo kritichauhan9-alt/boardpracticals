@@ -52,10 +52,10 @@
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
           
-            const seat = document.getElementById('seatNumber').value;
-            const stream = document.getElementById('stream').value.toLowerCase();
+            const seat = document.getElementById('seatNumber').value.trim();
+            const stream = document.getElementById('stream').value.trim().toLowerCase();
             const studentExams = examData.filter(row => 
-                row['Seat Number'].toString().trim() === seat && row['Stream'].toLowerCase().trim() === stream
+                row['Seat Number'].toString().trim() === seat && row['Stream']toString().trim() === stream
             );
 
             alert(studentExams.length);
@@ -88,6 +88,7 @@
     </script>
 </body>
 </html>
+
 
 
 
