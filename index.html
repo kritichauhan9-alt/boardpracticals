@@ -36,7 +36,7 @@
         async function loadExcel() {
             try {
                 
-                const url = '/schedule1.xlsx'; // e.g., 'https://example.com/student_exams.xlsx'
+                const url = './schedule1.xlsx'; // e.g., 'https://example.com/student_exams.xlsx'
                 const response = await fetch(url);
                 const data = await response.arrayBuffer();
                 const workbook = XLSX.read(data, { type: 'array' });
@@ -90,6 +90,7 @@
     </script>
 </body>
 </html>
+
 
 
 
