@@ -57,8 +57,6 @@
             const studentExams = examData.filter(row => 
                 row['Seat Number'] == seat.toString() && row['Stream'].toLowerCase() === stream
             );
-         
-
             if (studentExams.length === 0) {
                 alert('No data found for this seat number and stream.');
                 return;
@@ -88,6 +86,7 @@
     </script>
 </body>
 </html>
+
 
 
 
