@@ -53,16 +53,16 @@
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
           
-            const seat = document.getElementById('seatNumber').value.trim();
+            const seat = document.getElementById('seatNumber').value.trim().toLowerCase();
             const stream = document.getElementById('stream').value.trim().toLowerCase();
             console.log(examData);
             const studentExams = examData.filter(row => {
-                const rowSeat = String(row['Seat Number']).trim();
+                const rowSeat = String(row['Seat Number']).trim().toLowerCase();
                 const rowStream = String(row['Stream']).trim().toLowerCase();
                 return rowSeat === seat && rowStream === stream;
             });
 
-            alert(studentExams.length);
+            alert(studentExams[0]);
             if (studentExams.length === 0) {
                 alert('No data found for this seat number and stream.');
                 return;
@@ -92,6 +92,7 @@
     </script>
 </body>
 </html>
+
 
 
 
